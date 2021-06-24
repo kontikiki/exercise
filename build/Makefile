@@ -137,6 +137,19 @@ roscpp_generate_messages_eus/fast:
 .PHONY : roscpp_generate_messages_eus/fast
 
 #=============================================================================
+# Target rules for targets named mypantilt_plugin
+
+# Build rule for target.
+mypantilt_plugin: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mypantilt_plugin
+.PHONY : mypantilt_plugin
+
+# fast build rule for target.
+mypantilt_plugin/fast:
+	$(MAKE) -f CMakeFiles/mypantilt_plugin.dir/build.make CMakeFiles/mypantilt_plugin.dir/build
+.PHONY : mypantilt_plugin/fast
+
+#=============================================================================
 # Target rules for targets named roscpp_generate_messages_lisp
 
 # Build rule for target.
@@ -305,45 +318,32 @@ std_msgs_generate_messages_py/fast:
 	$(MAKE) -f CMakeFiles/std_msgs_generate_messages_py.dir/build.make CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
 
-#=============================================================================
-# Target rules for targets named myrobot_plugin
+mypantilt_plugin.o: mypantilt_plugin.cc.o
 
-# Build rule for target.
-myrobot_plugin: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 myrobot_plugin
-.PHONY : myrobot_plugin
-
-# fast build rule for target.
-myrobot_plugin/fast:
-	$(MAKE) -f CMakeFiles/myrobot_plugin.dir/build.make CMakeFiles/myrobot_plugin.dir/build
-.PHONY : myrobot_plugin/fast
-
-myrobot_plugin.o: myrobot_plugin.cc.o
-
-.PHONY : myrobot_plugin.o
+.PHONY : mypantilt_plugin.o
 
 # target to build an object file
-myrobot_plugin.cc.o:
-	$(MAKE) -f CMakeFiles/myrobot_plugin.dir/build.make CMakeFiles/myrobot_plugin.dir/myrobot_plugin.cc.o
-.PHONY : myrobot_plugin.cc.o
+mypantilt_plugin.cc.o:
+	$(MAKE) -f CMakeFiles/mypantilt_plugin.dir/build.make CMakeFiles/mypantilt_plugin.dir/mypantilt_plugin.cc.o
+.PHONY : mypantilt_plugin.cc.o
 
-myrobot_plugin.i: myrobot_plugin.cc.i
+mypantilt_plugin.i: mypantilt_plugin.cc.i
 
-.PHONY : myrobot_plugin.i
+.PHONY : mypantilt_plugin.i
 
 # target to preprocess a source file
-myrobot_plugin.cc.i:
-	$(MAKE) -f CMakeFiles/myrobot_plugin.dir/build.make CMakeFiles/myrobot_plugin.dir/myrobot_plugin.cc.i
-.PHONY : myrobot_plugin.cc.i
+mypantilt_plugin.cc.i:
+	$(MAKE) -f CMakeFiles/mypantilt_plugin.dir/build.make CMakeFiles/mypantilt_plugin.dir/mypantilt_plugin.cc.i
+.PHONY : mypantilt_plugin.cc.i
 
-myrobot_plugin.s: myrobot_plugin.cc.s
+mypantilt_plugin.s: mypantilt_plugin.cc.s
 
-.PHONY : myrobot_plugin.s
+.PHONY : mypantilt_plugin.s
 
 # target to generate assembly for a file
-myrobot_plugin.cc.s:
-	$(MAKE) -f CMakeFiles/myrobot_plugin.dir/build.make CMakeFiles/myrobot_plugin.dir/myrobot_plugin.cc.s
-.PHONY : myrobot_plugin.cc.s
+mypantilt_plugin.cc.s:
+	$(MAKE) -f CMakeFiles/mypantilt_plugin.dir/build.make CMakeFiles/mypantilt_plugin.dir/mypantilt_plugin.cc.s
+.PHONY : mypantilt_plugin.cc.s
 
 # Help Target
 help:
@@ -354,6 +354,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... roscpp_generate_messages_eus"
+	@echo "... mypantilt_plugin"
 	@echo "... edit_cache"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
@@ -368,10 +369,9 @@ help:
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_py"
-	@echo "... myrobot_plugin"
-	@echo "... myrobot_plugin.o"
-	@echo "... myrobot_plugin.i"
-	@echo "... myrobot_plugin.s"
+	@echo "... mypantilt_plugin.o"
+	@echo "... mypantilt_plugin.i"
+	@echo "... mypantilt_plugin.s"
 .PHONY : help
 
 
