@@ -97,9 +97,15 @@ namespace gazebo
                }
 
         public: void OnRosMsg(const geometry_msgs::Vector3ConstPtr &_msg){
+                   if((_msg->x)>0){
                     this->setVelocity0(_msg->x);
+            }
+             if((_msg->y)>0){
                     this->setVelocity1(_msg->y);
-                       this->setVelocity2(_msg->z);
+            }
+            if((_msg->z)>0){
+                    this->setVelocity2(_msg->z);
+            } 
                 }
 
         private: void QueueThread(){

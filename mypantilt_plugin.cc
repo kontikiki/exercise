@@ -106,9 +106,16 @@ namespace gazebo
                }
 
         public: void OnRosMsg(const geometry_msgs::Vector3ConstPtr &_msg){
+            if((_msg->x)>0){
                     this->setPosition0(_msg->x);
+            }
+             if((_msg->y)>0){
                     this->setPosition1(_msg->y);
-                       this->setPosition2(_msg->z);
+            }
+            if((_msg->z)>0){
+                    this->setPosition2(_msg->z);
+            }      
+                      
                 }
 
         private: void QueueThread(){
