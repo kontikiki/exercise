@@ -110,8 +110,8 @@ libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libgazebo_common.so
 libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libgazebo_gimpact.so
 libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libgazebo_opcode.so
 libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libgazebo_opende_ou.so
+libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libgazebo_ccd.so
 libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
 libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
@@ -135,8 +135,8 @@ libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libOgreTerrain.so
 libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libOgrePaging.so
 libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-transport4.so.4.0.0
 libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-msgs1.so.1.0.0
-libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-common1.so.1.0.1
-libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-fuel_tools1.so.1.0.0
+libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-common1.so.1.1.1
+libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-fuel_tools1.so.1.2.0
 libmyrobot_plugin.so: /opt/ros/melodic/lib/libroscpp.so
 libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 libmyrobot_plugin.so: /opt/ros/melodic/lib/librosconsole.so
@@ -170,8 +170,8 @@ libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libgazebo_common.so
 libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libgazebo_gimpact.so
 libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libgazebo_opcode.so
 libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libgazebo_opende_ou.so
+libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libgazebo_ccd.so
 libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
 libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
@@ -196,7 +196,6 @@ libmyrobot_plugin.so: /opt/ros/melodic/lib/libxmlrpcpp.so
 libmyrobot_plugin.so: /opt/ros/melodic/lib/librostime.so
 libmyrobot_plugin.so: /opt/ros/melodic/lib/libcpp_common.so
 libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
 libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 libmyrobot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so

@@ -26,7 +26,7 @@ namespace gazebo
         private: physics::JointPtr joint0;
         private: physics::JointPtr joint1;
         private: physics::JointPtr joint2;
-        private: physics::JointController* jc0;
+        private: physics::JointControllerPtr jc0;
         //private: common::PID pid;
 
         private: std::unique_ptr<ros::NodeHandle> rosNode;
@@ -48,7 +48,7 @@ namespace gazebo
 
                                 
                     this->model=_model;
-                    this->jc0=new physics::JointController(model);  
+                    this->jc0=model->GetJointController();  
                     this->joint0=_model->GetJoints()[0];
                     this->joint1=_model->GetJoints()[1];
                     this->joint2=_model->GetJoints()[2];

@@ -110,8 +110,8 @@ libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libgazebo_common.so
 libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libgazebo_gimpact.so
 libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libgazebo_opcode.so
 libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libgazebo_opende_ou.so
+libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libgazebo_ccd.so
 libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
 libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
@@ -135,8 +135,8 @@ libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libOgreTerrain.so
 libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libOgrePaging.so
 libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-transport4.so.4.0.0
 libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-msgs1.so.1.0.0
-libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-common1.so.1.0.1
-libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-fuel_tools1.so.1.0.0
+libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-common1.so.1.1.1
+libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-fuel_tools1.so.1.2.0
 libmypantilt_plugin.so: /opt/ros/melodic/lib/libroscpp.so
 libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 libmypantilt_plugin.so: /opt/ros/melodic/lib/librosconsole.so
@@ -170,8 +170,8 @@ libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libgazebo_common.so
 libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libgazebo_gimpact.so
 libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libgazebo_opcode.so
 libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libgazebo_opende_ou.so
+libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libgazebo_ccd.so
 libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
 libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
@@ -196,7 +196,6 @@ libmypantilt_plugin.so: /opt/ros/melodic/lib/libxmlrpcpp.so
 libmypantilt_plugin.so: /opt/ros/melodic/lib/librostime.so
 libmypantilt_plugin.so: /opt/ros/melodic/lib/libcpp_common.so
 libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
 libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 libmypantilt_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so

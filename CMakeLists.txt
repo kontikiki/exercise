@@ -9,9 +9,9 @@ include_directories(${std_msgs_INCLUDE_DIRS})
 link_directories(${GAZEBO_LIBRARY_DIRS})
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
 
-add_library(myrobot_plugin SHARED myrobot_plugin.cc)
+add_library(mypantilt_plugin SHARED mypantilt_plugin.cc)
 
-target_link_libraries(myrobot_plugin ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
+target_link_libraries(mypantilt_plugin ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
 
 # Build the stand-alone test program
 #add_executable(vel vel.cc)
