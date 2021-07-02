@@ -1,5 +1,5 @@
-#ifndef _MYROBOT_PLUGIN_HH_
-#define _MYROBOT_PLUGIN_HH_
+#ifndef _MYPANTILT1_PLUGIN_HH_
+#define _MYPANTILT1_PLUGIN_HH_
 
 #include <gazebo/gazebo.hh>
 #include <gazebo/physics/physics.hh>
@@ -10,112 +10,102 @@
 #include "ros/callback_queue.h"
 #include "ros/subscribe_options.h"
 #include "std_msgs/Float32.h"
-#include "geometry_msgs/Vector3.h"
-#include <gazebo/rendering/rendering.hh>
+#include "geometry_msgs/Twist.h"
 
 
 namespace gazebo
 {
-    class mypantilt_plugin: public ModelPlugin
+    class mypantilt1_plugin: public ModelPlugin
     {
-        public: mypantilt_plugin(){}
-        public: ~mypantilt_plugin(){}
-        
+        public: mypantilt1_plugin(){}
+        public: ~mypantilt1_plugin(){}
 
         private: physics::ModelPtr model;
         private: physics::JointPtr joint0;
         private: physics::JointPtr joint1;
         private: physics::JointPtr joint2;
+ //       private: common::PID pid;
         private: physics::JointControllerPtr jc0;
-        //private: common::PID pid;
 
         private: std::unique_ptr<ros::NodeHandle> rosNode;
         private: ros::Subscriber rosSub;
         private: ros::CallbackQueue rosQueue;
         private: std::thread rosQueueThread;
-       
 
 
         public: virtual void Load(physics::ModelPtr _model,sdf::ElementPtr _sdf)
                 {
-                      
-
                     if(_model->GetJointCount()==0)
                     {
                         std::cerr<< "Invalid joint count, myrobot plugin not loaded\n";
                         return;
                     }
 
-                                
                     this->model=_model;
                     this->jc0=model->GetJointController();  
                     this->joint0=_model->GetJoints()[0];
                     this->joint1=_model->GetJoints()[1];
                     this->joint2=_model->GetJoints()[2];
-
-/*
-                    this->pid=common::PID(0.1,0,0);
-                    this->model->GetJointController()->SetVelocityPID(
-                            this->joint0->GetScopedName(),this->pid);
-                    this->model->GetJointController()->SetVelocityPID(
-                            this->joint1->GetScopedName(),this->pid);
-                    this->model->GetJointController()->SetVelocityPID(
-                            this->joint2->GetScopedName(),this->pid);
-*/
-                      if(!ros::isInitialized())
+     /*               this->pid=common::PID(0.1,0,0);
+                    jc0->SetVelocityPID(this->joint0->GetScopedName(),this->pid);
+                    jc0->SetVelocityPID(this->joint1->GetScopedName(),this->pid);
+                    jc0->SetVelocityPID(this->joint2->GetScopedName(),this->pid);
+    */
+                    double velocity=0;
+                    
+                    if(!ros::isInitialized())
                     {
                         int argc=0;
                         char **argv=NULL;
 
-                        ros::init(argc,argv,"gazebo_client",
+                        ros::init(argc,argv,"gazebo_client1",
                                 ros::init_options::NoSigintHandler);
 
-
                     }
-
-                this->rosNode.reset(new ros::NodeHandle("gazebo_client"));
+            
+                    this->rosNode.reset(new ros::NodeHandle("gazebo_client1"));
 
                     ros::SubscribeOptions so=
-                        ros::SubscribeOptions::create<geometry_msgs::Vector3>(
-                                "/"+this->model->GetName()+"/angle_cmd",
+                        ros::SubscribeOptions::create<geometry_msgs::Twist>(
+                                "/"+this->model->GetName()+"/vel_cmd",
                                 1,
-                                boost::bind(&mypantilt_plugin::OnRosMsg,this,_1),
+                                boost::bind(&mypantilt1_plugin::OnRosMsg,this,_1),
                                 ros::VoidPtr(),&this->rosQueue);
                     this->rosSub=this->rosNode->subscribe(so);
 
                     this->rosQueueThread=
-                        std::thread(std::bind(&mypantilt_plugin::QueueThread,this));
+                        std::thread(std::bind(&mypantilt1_plugin::QueueThread,this));
                 }
 
-        public: void setPosition0(const float &_angle)
+        public: void setVelocity0(const float &_vel)
                 {
-                            jc0->SetJointPosition(joint0,_angle);
+                    jc0->SetVelocityTarget(this->joint0->GetScopedName(),_vel);
+
                     std::cerr<<"joint name is "<<this->joint0->GetScopedName()<<std::endl;
                 }
 
-        public:  void setPosition1(const float &_angle){
+        public:  void setVelocity1(const float &_vel){
+                    jc0->SetVelocityTarget(this->joint1->GetScopedName(),_vel);
 
-                    jc0->SetJointPosition(joint1,_angle);
                     std::cerr<<"joint name is "<<this->joint1->GetScopedName()<<std::endl;
                 }
 
-       public: void setPosition2(const float &_angle){
-
-                    jc0->SetJointPosition(joint2,_angle);
+       public: void setVelocity2(const float &_vel){
+                    jc0->SetVelocityTarget(this->joint2->GetScopedName(),_vel);
                    std::cerr<<"joint name is "<<this->joint2->GetScopedName()<<std::endl;
                }
 
-        public: void OnRosMsg(const geometry_msgs::Vector3ConstPtr &_msg){
-            if((_msg->x)!=0){
-                    this->setPosition0(_msg->x);
+        public: void OnRosMsg(const geometry_msgs::TwistConstPtr& _msg){
+            std::cerr<<"OnrosMsg process"<<std::endl;
+                   if((_msg->angular.x)!=0){
+                    this->setVelocity0(_msg->angular.x);
             }
-             if((_msg->y)!=0){
-                    this->setPosition1(_msg->y);
+             if((_msg->angular.y)!=0){
+                    this->setVelocity1(_msg->angular.y);
             }
-            if((_msg->z)!=0){
-                    this->setPosition2(_msg->z);
-            }      
-                      
+            if((_msg->angular.z)!=0){
+                    this->setVelocity2(_msg->angular.z);
+            } 
                 }
 
         private: void QueueThread(){
@@ -125,6 +115,6 @@ namespace gazebo
                      }
                  }
     };
-    GZ_REGISTER_MODEL_PLUGIN(mypantilt_plugin)
+    GZ_REGISTER_MODEL_PLUGIN(mypantilt1_plugin)
 }
 #endif
